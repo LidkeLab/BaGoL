@@ -127,8 +127,8 @@ ChainFlag:
 1 saves the output chain. default is 0. It is recommended not to save the chain because it can take a very large chunk 
 of the memory.
 
-Overview of BaGoL:
 
+Overview of BaGoL:\\
 Single molecule localization microscopy super-resolution methods such as DNA-PAINT and (d)STORM generate multiple observed 
 localizations over the time course of data acquisition from each dye or binding site that are nor a priori assigned to 
 those specific dyes or binding sites. BaGoL implements a Bayesian method of grouping and combining localizations from 
