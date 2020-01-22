@@ -1,9 +1,31 @@
 # BaGoL
-The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method described by: 
 
 "Sub-Nanometer Precision using Bayesian Grouping of Localizations"
 Mohamadreza Fazel, Michael J. Wester, Sebastian Restrepo Cruz, Sebastian Strauss, 
 Florian Schueder, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
+
+# Overview of BaGoL:
+
+Single molecule localization microscopy super-resolution methods such as DNA-PAINT and (d)STORM generate multiple observed 
+localizations over the time course of data acquisition from each dye or binding site that are nor a priori assigned to 
+those specific dyes or binding sites. BaGoL implements a Bayesian method of grouping and combining localizations from 
+multiple blinking/binding events that can improve localization precision to better than one naometer. BaGoL allows 
+inclusion of prior knowledge such as distribution of the number of localizations per emitter and the localization precisions.
+
+The algorithm is comprised of several steps depicted in the figure. First, the list of localizations are split into smaller
+subsets. Second, the outliers are recognized as localizations with less than a certain number of neighbors within a certain 
+distance. Third, localizations within each subset are further split into preclusters using hierarchical clustering 
+algorithm. Fourth, each precluster is processed using RJMCMC. Fifth, the chain from all the preclusters are combined to 
+produce posterior and MAPN images.
+
+We tested several other common algorithm for the porpuse of grouping and combining of the localizations and BaGoL did better
+than all of them. This method can be used for about a factor of two precision improvement on a typical dSTORM data set and
+facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
+We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
+
+# Software Package Description:
+
+The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method described by: 
 
 Software Package:
 The algorithm codes and a pre-compliled mex execuatable needed for frame connection.   
@@ -73,7 +95,7 @@ PreBaGoL_SRImage.png: 	Traditional Super-resolution Image
 Posterior_SRImage.png:	Super-resolution image from Posterior (weighted average) output
 MAPN_SRImage.png: 	Super-resolution image from MAPN (most likely) output
 
-Parameters and parameters adjusment:
+# Parameters and parameters adjusment:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
@@ -128,24 +150,7 @@ ChainFlag:
 of the memory.
 
 
-Overview of BaGoL:
 
-Single molecule localization microscopy super-resolution methods such as DNA-PAINT and (d)STORM generate multiple observed 
-localizations over the time course of data acquisition from each dye or binding site that are nor a priori assigned to 
-those specific dyes or binding sites. BaGoL implements a Bayesian method of grouping and combining localizations from 
-multiple blinking/binding events that can improve localization precision to better than one naometer. BaGoL allows 
-inclusion of prior knowledge such as distribution of the number of localizations per emitter and the localization precisions.
-
-The algorithm is comprised of several steps depicted in the figure. First, the list of localizations are split into smaller
-subsets. Second, the outliers are recognized as localizations with less than a certain number of neighbors within a certain 
-distance. Third, localizations within each subset are further split into preclusters using hierarchical clustering 
-algorithm. Fourth, each precluster is processed using RJMCMC. Fifth, the chain from all the preclusters are combined to 
-produce posterior and MAPN images.
-
-We tested several other common algorithm for the porpuse of grouping and combining of the localizations and BaGoL did better
-than all of them. This method can be used for about a factor of two precision improvement on a typical dSTORM data set and
-facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
-We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
 
 
 
