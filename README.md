@@ -4,7 +4,7 @@
 Mohamadreza Fazel, Michael J. Wester, Sebastian Restrepo Cruz, Sebastian Strauss, 
 Florian Schueder, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
 
-# Overview of BaGoL:
+# Algorithm Overview:
 
 Single molecule localization microscopy super-resolution methods such as DNA-PAINT and (d)STORM generate multiple observed 
 localizations over the time course of data acquisition from each dye or binding site that are nor a priori assigned to 
