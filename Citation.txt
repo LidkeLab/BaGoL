@@ -1,0 +1,8 @@
+@article{fazel2019sub,
+  title={Sub-Nanometer Precision using Bayesian Grouping of Localizations},
+  author={Fazel, Mohamadreza and Wester, Michael J and Rieger, Bernd and Jungmann, Ralf and Lidke, Keith A},
+  journal={bioRxiv},
+  pages={752287},
+  year={2019},
+  publisher={Cold Spring Harbor Laboratory}
+}

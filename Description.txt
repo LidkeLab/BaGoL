@@ -1,0 +1,14 @@
+
+Name of the package: Sub-Nanometer Precision using Bayesian Grouping of Localizations (BaGoL)
+
+Version: 1
+
+Date of release: January, 2020
+
+License: MIT License
+
+Cite: Mohamadreza Fazel, Michael J. Wester, Sebastian Restrepo Cruz, Sebastian Strauss, 
+Florian Schueder, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke, "Sub-Nanometer Precision using
+Bayesian Grouping of Localizations", NatMethods, 2020.
+
+Maintainer: Keith A. Lidke (klidke@unm.edu)
