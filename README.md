@@ -23,6 +23,8 @@ than all of them. This method can be used for about a factor of two precision im
 facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
 We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
 
+<p align="center"><img src="Data Flow.png" width="80%" height="80%"></p>
+
 # Software Package Description:
 
 The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method described by: 
