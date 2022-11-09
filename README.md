@@ -1,8 +1,8 @@
 # BaGoL
 
-"Sub-Nanometer Precision using Bayesian Grouping of Localizations"
-Mohamadreza Fazel, Michael J. Wester, Sebastian Restrepo Cruz, Sebastian Strauss, 
-Florian Schueder, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
+"High-Precision Estimation of Emitter Positions using Bayesian Grouping of Localizations"
+Mohamadreza Fazel, Michael J. Wester, David J. Schodt, Sebastian Restrepo Cruz, Sebastian Strauss, Florian Schueder, 
+Thomas Schlichthaerle, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
 
 # Algorithm Overview:
 
@@ -23,8 +23,6 @@ than all of them. This method can be used for about a factor of two precision im
 facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
 We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
 
-<p align="center"><img src="Data Flow.png" width="70%" height="80%"></p>
-
 # Software Package Description:
 
 The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method described by: 
@@ -44,26 +42,10 @@ Download the Software Package.
 In MATLAB change directories to the BaGoL folder. 
 
 Data:
-dSTORM data of microtubules and EGF receptors and simulated 8-mer data. These data are used by the demos. 
+dSTORM data of EGF receptors, DNA Origami and simulated 8-mer data. These data are used by the demos. 
 
 Demos: 
 To run the demos open the scripts in MATLAB and run them or type the name of the scripts in a command window.
-
-Microtubules.m: 
-Analysis of localizations from a 4800x4800 nm^2 region of dSTORM microtubule data. 
-This show a basic BaGoL data flow using a broad gamma prior for localizations per emitter. 
-The results will be saved in the BaGoL\Results_Microtubule folder. Scale bars are 1000 nm.
-Run time is ~30 min. 
-
-The script should produce: 
-
-PreBaGoL_SRImage.png: 	Traditional Super-resolution Image
-PreBaGoL_SRImage_Filtered.png:	Traditional Super-resolution Image after filtering by NN and intensity
-Posterior_SRImage.png:	Super-resolution image from Posterior (weighted average) output
-MAPN_SRImage.png: 	Super-resolution image from MAPN (most likely) output
-Lambda_Hist.png:	Localizations per emitter for prior (curve) and found (histogram)
-BaGoL_X-SE.png: 	Localization precision after grouping
-BaGoL_Y-SE.png: 	Localization precision after grouping
 
 EGFR.m: 
 Analysis of localizations from a 4660x4660 nm^2 region of dSTORM data of A647-EGF bound to EGFR.
@@ -102,7 +84,8 @@ BaGoL has a few parameters that need to be carefully adjusted. A good descriptio
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
 Lambda:
-Lambda can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
+The algorithm can either learn this parameter from the data itself or take it as an input.
+The inpout lambda can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
 prior with mean value of Lambda for average number of localizations per emitter. Given a vector with two elements,
 BaGoL wil use a gamma prior for number of localizations per emitter. The product of the vector elements is equal 
 to the average of the number of localizations per emitter. These two parameters gives the user the flexibility of 
@@ -119,11 +102,6 @@ avoid edge artifacts. The default value usually works for this parameter. (nm)
 Cutoff:
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
 a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. (nm)
-
-NNN and NNR:
-To remove the ouliers within the list of localizations, BaGoL implement a nearest neighbor filter. The localizations
-with less than NNN neighbors within NNR distance are considered outliers. These can be adjusted by inspecting the 
-nearest neighbor distribution of the data.
 
 Drift:
 Drift may be presented in the data due to different reasons. BaGoL is able to handle movement of individual emitters
