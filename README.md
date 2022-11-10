@@ -112,50 +112,59 @@ Structure containing input data with the following fields:
 
 ROIsize: 
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
-regions are inversely correlated with the density of localizations. (nm)
+regions are inversely correlated with the density of localizations. 
 
 Overlap:
 The size of overlapping region between adjacant subregions. Subregions are overlapped with their neighbors to 
-avoid edge artifacts. The default value usually works for this parameter. (nm)
+avoid edge artifacts. The default value usually works for this parameter. 
 
 Cutoff:
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
-a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. (nm)
+a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. 
 
 Drift:
 Drift may be presented in the data due to different reasons. BaGoL is able to handle movement of individual emitters
 where Drift is the maximum movement of an emitter per frame. Use zero when there is no drift or residual drift. (nm/frame)
 
+SE_Adjust:
+Localization precisions are often under-estimated in the loclization step. As such, we need to inflate the precisions by a
+small value of SE_Adjust. Default is zero.
+
 N_Burin: 
 Number of jumps within burnin portion of the chain for each pre-cluster.
+
 N_Trials: 
 Number of the jumps within the post-burnin chain for each pre-cluster. The post-burnin part of the chain are returned  
 for further analysis.  
 
-P_Jumps: 
-Probabilities of proposing different jumps [Move Allocate Add Remove], add up to one.
+PixelSize: 
+The pixel size of the output images. 
+
+PImageSize:
+Size of the produced posterior image, which is the same as the range of the input data set. 
+
+Xi:
+The algorithm can either learn this parameter from the data itself or take it as an input.
+The inpout Xi can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
+prior with mean value of Xi for average number of localizations per emitter. Given a vector with two elements,
+BaGoL wil use a gamma prior for number of localizations per emitter. The product of the vector elements is equal 
+to the average of the number of localizations per emitter. These two parameters gives the user the flexibility of 
+adjusting the shape of the gamma distribution when the distribution shape is not well characterized. When learning Xi, the
+given values will be used to initialize the corresponding chain. Again if Xi is a scalar it is used to initialize a Poisson prior
+otherwise a gamma prior.
+
+HierarchicalFlag:
+0 do not learn Xi. 1 learn Xi. Default 0.
 
 PImageFlag:
 1 produces the posterior image. Default is 0.
-
-PixelSize: 
-The pixel size of the output images. (nm)
-
-PImageSize:
-Size of the produced posterior image, which is the same as the range of the input data set. (nm)
 
 ChainFlag:
 1 saves the output chain. default is 0. It is recommended not to save the chain because it can take a very large chunk 
 of the memory.
 
+# OutPuts:
 
-Xi:
-The algorithm can either learn this parameter from the data itself or take it as an input.
-The inpout lambda can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
-prior with mean value of Lambda for average number of localizations per emitter. Given a vector with two elements,
-BaGoL wil use a gamma prior for number of localizations per emitter. The product of the vector elements is equal 
-to the average of the number of localizations per emitter. These two parameters gives the user the flexibility of 
-adjusting the shape of the gamma distribution when the distribution shape is not well characterized.
 
 
 
