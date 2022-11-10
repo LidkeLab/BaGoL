@@ -176,8 +176,8 @@ Structure containing some results:
    Y:      Vector of found emitter Y positions (nm),                                                                                          
    X_SE:   Vector of precisions for found X emitter positions (nm),                                                                          
    Y_SE:   Vector of precisions for found Y emitter positions (nm),   
-   AlphaX: Vector of found X-drift velocities for each emitter (nm/frame), 
-   AlphaY: Vector of found Y-drift velocities for each emitter (nm/frame),  
+   AlphaX: Vector of found X-drift velocities for each emitter (nm/frame),                                                                
+   AlphaY: Vector of found Y-drift velocities for each emitter (nm/frame),                                                     
    Nmean:  Vector of mean number of localizations allocated to each found emitter.
    
 PImage:
@@ -195,9 +195,9 @@ The easiest way to generate reults is using the function "saveBaGoL()", which ge
 histogram of NND, histograms of X and Y precisions, plot of Xi chain, SR image using the input localizations, MAPN image
 using the found emitter positions within the MAPN structure, Posterior image, Overlay image.
    
-If you have questions, please feel free to shoot us an email:
-Mohamadreza Fazel: fazel.mohamadreza@gmail.com,
-Michael Wester: wester@math.unm.edu,
+If you have questions, please feel free to shoot us an email:                                                                     
+Mohamadreza Fazel: fazel.mohamadreza@gmail.com,                                                                                                                                                             
+Michael Wester: wester@math.unm.edu,                                                                                                  
 Keith Lidke: klidke@unm.edu.
 
 
