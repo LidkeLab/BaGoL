@@ -42,16 +42,14 @@ INSTALLATION:
 Download the Software Package.
 In MATLAB change directories to the BaGoL folder. 
 
-Data:
+# Data:
 dSTORM data of EGF receptors, DNA Origami and simulated 8-mer data. These data are used by the demos. 
 More data are available at the Nature Communication website published along the paper. 
 
 Demos: 
 To run the demos open the scripts in MATLAB and run them or type the name of the scripts in a command window.
 
-BaGoL_MPI_Origami.m
-------------
-
+BaGoL_MPI_Origami.m:
 Analysis of localizations from an experimental MPI DNA-Origami  
 structure data. This show a basic hierarchical BaGoL data flow. 
 The results will be saved in the Results_MPI folder.  Scale bars 
@@ -78,8 +76,6 @@ LocsScatter-MAPN.fig:      Plot of time color-coded localizations and
 MAPN.mat:                  Structure containing the MAPN-coordinates of emitters.
 
 BaGoL_EGFR_dSTORM.m:
--------
-
 Analysis of localizations from a 4660x4660 nm^2 region of dSTORM EGFR data.  
 This example demonstrates use of hierarchial Bayes to infer number of localizations 
 per emitter distribution from part of the data and then use it to process the entire 
@@ -91,8 +87,6 @@ MAPN_Hist+Random.png    Histogram of found NNDs compared to the curve for a
                         random distribution.
 
 Eight_Mer.m: 
-------------
-
 Animation of the RJMCMC chian for a simulated 8mer data set. 
 It demonstrates the core BaGoL algorithm on a single cluster of localizations.
 The results will be saved in the Results_Eight_Mer folder.  Scale bars
