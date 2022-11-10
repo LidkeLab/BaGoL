@@ -1,6 +1,7 @@
 # BaGoL
 
 "High-Precision Estimation of Emitter Positions using Bayesian Grouping of Localizations"
+
 Mohamadreza Fazel, Michael J. Wester, David J. Schodt, Sebastian Restrepo Cruz, Sebastian Strauss, Florian Schueder, 
 Thomas Schlichthaerle, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
 
@@ -79,7 +80,7 @@ PreBaGoL_SRImage.png: 	Traditional Super-resolution Image
 Posterior_SRImage.png:	Super-resolution image from Posterior (weighted average) output
 MAPN_SRImage.png: 	Super-resolution image from MAPN (most likely) output
 
-# Parameters and parameters adjusment:
+# Parameters and parameters adjustment:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
