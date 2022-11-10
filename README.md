@@ -22,7 +22,8 @@ produce posterior and MAPN images. The figure "Data_Flow" describes these steps.
 We tested several other common algorithm for the porpuse of grouping and combining of the localizations and BaGoL did better
 than all of them. This method can be used for about a factor of two precision improvement on a typical dSTORM data set and
 facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
-We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
+We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. For
+detailed description of these functions please see their documentations.
 
 # Software Package Description:
 
