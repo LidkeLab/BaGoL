@@ -99,7 +99,7 @@ Posterior_SRImage.png:  Super-resolution image from Posterior (weighted average
                         over all models).
 MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
 
-# Parameters and parameter adjustments:
+# Input Parameters and Parameter Adjustments:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
@@ -168,7 +168,7 @@ ChainFlag:
 1 saves the output chain. default is 0. It is recommended not to save the chain because it can take a very large chunk 
 of the memory.
 
-# OutPuts:
+# Outputs:
 
 MAPN:                                                                                             
 Structure containing some results:                                                                               
