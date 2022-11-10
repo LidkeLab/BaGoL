@@ -103,47 +103,47 @@ MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
-SMD:
-Structure containing input data with the following fields:
-   X:    Vector of X localizations,
-   Y:    Vector of Y localizations,
-   X_SE  Vector of X precisions,
-   Y_SE: Vector of Y precisions.
+SMD:                                                                                                                   
+Structure containing input data with the following fields:                                                                       
+   X:    Vector of X localizations,                                                                                           
+   Y:    Vector of Y localizations,                                                                                        
+   X_SE  Vector of X precisions,                                                                                                    
+   Y_SE: Vector of Y precisions.                               
 
-ROIsize: 
+ROIsize:                                                                                                                    
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
 regions are inversely correlated with the density of localizations. 
 
-Overlap:
+Overlap:                                                                                                                        
 The size of overlapping region between adjacant subregions. Subregions are overlapped with their neighbors to 
 avoid edge artifacts. The default value usually works for this parameter. 
 
-Cutoff:
+Cutoff:                                                                                                                    
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
 a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced.
 
-Drift:
+Drift:                                                                                                                                       
 Drift may be presented in the data due to different reasons. BaGoL is able to handle movement of individual emitters
 where Drift is the maximum movement of an emitter per frame. Use zero when there is no drift or residual drift. (nm/frame).
 
-SE_Adjust:
+SE_Adjust:                                                                                                                                 
 Localization precisions are often under-estimated in the loclization step. As such, we need to inflate the precisions by a
 small value of SE_Adjust. Default is zero.
 
-N_Burin: 
+N_Burin:                                                                                                                            
 Number of jumps within burnin portion of the chain for each pre-cluster.
 
-N_Trials: 
+N_Trials:                                                                                                                           
 Number of the jumps within the post-burnin chain for each pre-cluster. The post-burnin part of the chain are returned  
 for further analysis.  
 
 PixelSize: 
 The pixel size of the output images. 
 
-PImageSize:
+PImageSize:                                                                                                                           
 Size of the produced posterior image, which is the same as the range of the input data set. 
 
-Xi:
+Xi:                                                                                                                                            
 The algorithm can either learn this parameter from the data itself or take it as an input.
 The inpout Xi can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
 prior with mean value of Xi for average number of localizations per emitter. Given a vector with two elements,
@@ -153,31 +153,30 @@ adjusting the shape of the gamma distribution when the distribution shape is not
 given values will be used to initialize the corresponding chain. Again if Xi is a scalar it is used to initialize a Poisson prior
 otherwise a gamma prior.
 
-HierarchicalFlag:
+HierarchicalFlag:                                                                                                                             
 0 do not learn Xi. 1 learn Xi. Default 0.
 
-PImageFlag:
+PImageFlag:                                                                                                                       
 1 produces the posterior image. Default is 0.
 
-ChainFlag:
+ChainFlag:                                                                                                                 
 1 saves the output chain. default is 0. It is recommended not to save the chain because it can take a very large chunk 
 of the memory.
 
 # OutPuts:
 
-MAPN:
-Structure containing some results:
-   X:     Vector of found emitter X positions,
-   Y:     Vector of found emitter Y positions,
-   X_SE:  Vector of precisions for found X emitter positions,
-   Y_SE:  Vector of precisions for found Y emitter positions,
+MAPN:                                                                                             
+Structure containing some results:                                                                               
+   X:     Vector of found emitter X positions,                                                                              
+   Y:     Vector of found emitter Y positions,                                                                                          
+   X_SE:  Vector of precisions for found X emitter positions,                                                                          
+   Y_SE:  Vector of precisions for found Y emitter positions,                                                                             
    Nmean: Vector of mean number of localizations allocated to each found emitter.
    
 PImage:
 Posterior image
 
-Chain: 
-
+Chain:                                                                                                 
 Cell array containing the BaGoL chain for each pre-cluster
 
 XiChain:                                                                         
