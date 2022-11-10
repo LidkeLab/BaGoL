@@ -195,7 +195,8 @@ Note: The software package contain multiple functions to visualize and siplay th
 makeIm(), dispIm(), genSRMAPNOverlay(), plotMAPN(), plotNND_PDF(), saveBaGoL().
 The easiest way to generate reults is using the function "saveBaGoL()", which generates the following plots and images:
 histogram of NND, histograms of X and Y precisions, plot of Xi chain, SR image using the input localizations, MAPN image
-using the found emitter positions within the MAPN structure, Posterior image, Overlay image.
+using the found emitter positions within the MAPN structure, Posterior image, Overlay image. Detailed description of each
+function is provided in the corresponding documatations. 
    
 If you have questions, please feel free to shoot us an email:                                                                     
 Mohamadreza Fazel: fazel.mohamadreza@gmail.com,                                                                                                                                                             
