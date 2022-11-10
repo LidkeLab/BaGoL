@@ -105,22 +105,27 @@ in the scripts documentation but they are also presented in the following. The u
 
 SMD:                                                                                                                   
 Structure containing input data with the following fields:                                                                       
-   X:    Vector of X localizations,                                                                                           
-   Y:    Vector of Y localizations,                                                                                        
-   X_SE  Vector of X precisions,                                                                                                    
-   Y_SE: Vector of Y precisions.                               
+   X:    Vector of X localizations (nm),                                                                                           
+   Y:    Vector of Y localizations (nm),                                                                                        
+   X_SE: Vector of X precisions (nm),                                                                                                    
+   Y_SE: Vector of Y precisions (nm).                               
 
 ROIsize:                                                                                                                    
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
-regions are inversely correlated with the density of localizations. 
+regions are inversely correlated with the density of localizations. (nm)
+We recommend to pick the ROIsize so that there is not more than ~1000 localizations per ROI.
 
 Overlap:                                                                                                                        
 The size of overlapping region between adjacant subregions. Subregions are overlapped with their neighbors to 
-avoid edge artifacts. The default value usually works for this parameter. 
+avoid edge artifacts. The default value usually works for this parameter. (nm)
+Overlap is often picked to be 10-20 nm depending on the ROIsize and the size of clusters.
 
 Cutoff:                                                                                                                    
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
-a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced.
+a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. (nm)
+If your data is not too dense we suggest use whatever value larger than your ROIsize. If your dataset is dense then you
+need to set it to a value smaller than your ROIsize so that the localizations within each ROI can be break further into
+smaller pieces. However, "Cutoff" must not be too small so that this pre-clustering step starts breaking up clusters.
 
 Drift:                                                                                                                                       
 Drift may be presented in the data due to different reasons. BaGoL is able to handle movement of individual emitters
@@ -128,7 +133,7 @@ where Drift is the maximum movement of an emitter per frame. Use zero when there
 
 SE_Adjust:                                                                                                                                 
 Localization precisions are often under-estimated in the loclization step. As such, we need to inflate the precisions by a
-small value of SE_Adjust. Default is zero.
+small value of SE_Adjust. Default is zero. (nm)
 
 N_Burin:                                                                                                                            
 Number of jumps within burnin portion of the chain for each pre-cluster.
@@ -138,10 +143,10 @@ Number of the jumps within the post-burnin chain for each pre-cluster. The post-
 for further analysis.  
 
 PixelSize: 
-The pixel size of the output images. 
+The pixel size of the output images. (nm)
 
 PImageSize:                                                                                                                           
-Size of the produced posterior image, which is the same as the range of the input data set. 
+Size of the produced posterior image, which is the same as the range of the input data set. (nm)
 
 Xi:                                                                                                                                            
 The algorithm can either learn this parameter from the data itself or take it as an input.
@@ -167,10 +172,10 @@ of the memory.
 
 MAPN:                                                                                             
 Structure containing some results:                                                                               
-   X:     Vector of found emitter X positions,                                                                              
-   Y:     Vector of found emitter Y positions,                                                                                          
-   X_SE:  Vector of precisions for found X emitter positions,                                                                          
-   Y_SE:  Vector of precisions for found Y emitter positions,                                                                             
+   X:     Vector of found emitter X positions (nm),                                                                                                                                                                
+   Y:     Vector of found emitter Y positions (nm),                                                                                          
+   X_SE:  Vector of precisions for found X emitter positions (nm),                                                                          
+   Y_SE:  Vector of precisions for found Y emitter positions (nm),                                                                             
    Nmean: Vector of mean number of localizations allocated to each found emitter.
    
 PImage:
@@ -188,7 +193,10 @@ The easiest way to generate reults is using the function "saveBaGoL()", which ge
 histogram of NND, histograms of X and Y precisions, plot of Xi chain, SR image using the input localizations, MAPN image
 using the found emitter positions within the MAPN structure, Posterior image, Overlay image.
    
-   
+If you have questions, please feel free to shoot us an email:
+Mohamadreza Fazel: fazel.mohamadreza@gmail.com,
+Michael Wester: wester@math.unm.edu,
+Keith Lidke: klidke@unm.edu.
 
 
 
