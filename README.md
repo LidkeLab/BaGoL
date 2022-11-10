@@ -172,11 +172,13 @@ of the memory.
 
 MAPN:                                                                                             
 Structure containing some results:                                                                               
-   X:     Vector of found emitter X positions (nm),                                                                                                                                                                
-   Y:     Vector of found emitter Y positions (nm),                                                                                          
-   X_SE:  Vector of precisions for found X emitter positions (nm),                                                                          
-   Y_SE:  Vector of precisions for found Y emitter positions (nm),                                                                             
-   Nmean: Vector of mean number of localizations allocated to each found emitter.
+   X:      Vector of found emitter X positions (nm),                                                                                                                                                                
+   Y:      Vector of found emitter Y positions (nm),                                                                                          
+   X_SE:   Vector of precisions for found X emitter positions (nm),                                                                          
+   Y_SE:   Vector of precisions for found Y emitter positions (nm),   
+   AlphaX: Vector of found X-drift velocities for each emitter (nm/frame), 
+   AlphaY: Vector of found Y-drift velocities for each emitter (nm/frame),  
+   Nmean:  Vector of mean number of localizations allocated to each found emitter.
    
 PImage:
 Posterior image
