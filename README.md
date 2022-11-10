@@ -19,6 +19,8 @@ distance. Third, localizations within each subset are further split into preclus
 algorithm. Fourth, each precluster is processed using RJMCMC. Fifth, the chain from all the preclusters are combined to 
 produce posterior and MAPN images.
 
+Data_Flow.png
+
 We tested several other common algorithm for the porpuse of grouping and combining of the localizations and BaGoL did better
 than all of them. This method can be used for about a factor of two precision improvement on a typical dSTORM data set and
 facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
