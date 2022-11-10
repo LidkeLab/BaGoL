@@ -49,37 +49,61 @@ More data are available at the Nature Communication website published along the 
 Demos: 
 To run the demos open the scripts in MATLAB and run them or type the name of the scripts in a command window.
 
-EGFR.m: 
-Analysis of localizations from a 4660x4660 nm^2 region of dSTORM data of A647-EGF bound to EGFR.
-This shows a BaGoL data flow where localizations per emitter are estimated from data in a two-step process.  
-The results will be saved in BaGoL\Results_EGFR folder. Scalebars are 1000 nm.
-Run time is ~20 min. 
+BaGoL_MPI_Origami.m
+------------
+
+Analysis of localizations from an experimental MPI DNA-Origami  
+structure data. This show a basic hierarchical BaGoL data flow. 
+The results will be saved in the Results_MPI folder.  Scale bars 
+are 20 nm. Run time is ~5 min.  
 
 The script should produce: 
+SR_Im.png:                 Traditional super-resolution image. 
+Post-Im.png:               Posterior image or histogram image of the chain
+                           (weighted average over all models).
+MAPN-Im.png:               MAPN image which is the image of localizations from the
+                           most likely model. 
+Overlay_SR_Map.png:        Overlay of grayscale SR-image and color MAPN image.
+Overlay_SR_Post.png:       Overlay of grayscale SR-image and color posterior image. 
+Overlay_SR_Map_circle.png: Overlay of the SR & MAPN coordinates where every coordinate
+                           is represented by a circle located at the given location 
+		           and a radius of double of the given precision.
+Xi.png:                    Distribution of localizations per emitter.
+NND.png:                   Histogram of nearest neighbor distances from
+                           MAPN-coordinates. 
+BaGoL_X-SE.png:            Histogram of X-localization precisions after grouping. 
+BaGoL_Y-SE.png:            Histogram of Y-Localization precisions after grouping.
+LocsScatter-MAPN.fig:      Plot of time color-coded localizations and
+                           MAPN-coordinates.
+MAPN.mat:                  Structure containing the MAPN-coordinates of emitters.
 
-PreBaGoL_SRImage.png: 	Traditional Super-resolution Image
-PreBaGoL_SRImage_Filtered.png:	Traditional Super-resolution Image after filtering by NN and intensity
-Posterior_SRImage.png:	Super-resolution image from Posterior (weighted average) output
-MAPN_SRImage.png: 	Super-resolution image from MAPN (most likely) output
-Lambda_Hist_PriorEst.png:	Localizations per emitter for prior (curve) and found (histogram) for prior estimation
-Lambda_Hist.png:	Localizations per emitter for prior (curve) and found (histogram) used for final analysis
-BaGoL_X-SE.png: 	Localization precision after grouping
-BaGoL_Y-SE.png: 	Localization precision after grouping
-NND_Hist.png: 		Nearist Neighbor Distribution Histogram
-NND_Hist+Random.png:	Nearist Neighbor Distribution Histogram with theorical curve for spatial Poisson random data
+BaGoL_EGFR_dSTORM.m:
+-------
 
+Analysis of localizations from a 4660x4660 nm^2 region of dSTORM EGFR data.  
+This example demonstrates use of hierarchial Bayes to infer number of localizations 
+per emitter distribution from part of the data and then use it to process the entire 
+data set. It takes ~15 mins in total to run this script. The results will 
+be saved in Results_EGFR folder. The outputs are similar to what was 
+described previously with the inclusion of
+
+MAPN_Hist+Random.png    Histogram of found NNDs compared to the curve for a
+                        random distribution.
 
 Eight_Mer.m: 
-Animation of the jumps in the RJMCMC step for a simulated 8mer data set.
-Demonstrates the core BaGoL algorithm on a single cluster of localizations.
-The results will be saved in the BaGoL\Results_Eight_Mer folder. Scale bars are 5 nm.
+------------
 
-The script should produce: 
+Animation of the RJMCMC chian for a simulated 8mer data set. 
+It demonstrates the core BaGoL algorithm on a single cluster of localizations.
+The results will be saved in the Results_Eight_Mer folder.  Scale bars
+are 5 nm.  Run time is ~3 min.
 
-An animation of the classification and emitter movement steps
-PreBaGoL_SRImage.png: 	Traditional Super-resolution Image
-Posterior_SRImage.png:	Super-resolution image from Posterior (weighted average) output
-MAPN_SRImage.png: 	Super-resolution image from MAPN (most likely) output
+The script should produce:
+An animation of the chain,
+PreBaGoL_SRImage.png:   Traditional super-resolution image.
+Posterior_SRImage.png:  Super-resolution image from Posterior (weighted average
+                        over all models).
+MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
 
 # Parameters and parameters adjustment:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
