@@ -99,16 +99,16 @@ Posterior_SRImage.png:  Super-resolution image from Posterior (weighted average
                         over all models).
 MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
 
-# Parameters and parameters adjustment:
+# Parameters and parameter adjustments:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
 SMD:
 Structure containing input data with the following fields:
-   X:    Vector of X localizations
-   Y:    Vector of Y localizations
-   X_SE  Vector of X precisions
-   Y_SE: Vector of Y precisions
+   X:    Vector of X localizations,
+   Y:    Vector of Y localizations,
+   X_SE  Vector of X precisions,
+   Y_SE: Vector of Y precisions.
 
 ROIsize: 
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
@@ -120,11 +120,11 @@ avoid edge artifacts. The default value usually works for this parameter.
 
 Cutoff:
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
-a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. 
+a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced.
 
 Drift:
 Drift may be presented in the data due to different reasons. BaGoL is able to handle movement of individual emitters
-where Drift is the maximum movement of an emitter per frame. Use zero when there is no drift or residual drift. (nm/frame)
+where Drift is the maximum movement of an emitter per frame. Use zero when there is no drift or residual drift. (nm/frame).
 
 SE_Adjust:
 Localization precisions are often under-estimated in the loclization step. As such, we need to inflate the precisions by a
@@ -165,7 +165,30 @@ of the memory.
 
 # OutPuts:
 
+MAPN:
+Structure containing some results:
+   X:     Vector of found emitter X positions,
+   Y:     Vector of found emitter Y positions,
+   X_SE:  Vector of precisions for found X emitter positions,
+   Y_SE:  Vector of precisions for found Y emitter positions,
+   Nmean: Vector of mean number of localizations allocated to each found emitter.
+   
+PImage:
+Posterior image
 
+Chain: 
+Cell array containing the BaGoL chain for each pre-cluster
+
+XiChain:
+Chain of Xi samples
+
+Note: The software package contain multiple functions to visualize and siplay the results including: 
+makeIm(), dispIm(), genSRMAPNOverlay(), plotMAPN(), plotNND_PDF(), saveBaGoL().
+The easiest way to generate reults is using the function "saveBaGoL()", which generates the following plots and images:
+histogram of NND, histograms of X and Y precisions, plot of Xi chain, SR image using the input localizations, MAPN image
+using the found emitter positions within the MAPN structure, Posterior image, Overlay image.
+   
+   
 
 
 
