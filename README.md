@@ -39,18 +39,19 @@ MATLAB 64 bit
 MATLAB Statistics and Machine Learning Toolbox
 The algorithm was tested using MATLAB R2018a and will likely run on any later version. 
 
-INSTALLATION:
+INSTALLATION:                                                                                                                
 Download the Software Package.
 In MATLAB change directories to the BaGoL folder. 
 
-Data:
+Data:                                                                                                                        
 dSTORM data of EGF receptors, DNA Origami and simulated 8-mer data. These data are used by the demos. 
 More data are available at the Nature Communication website published along the paper. 
 
-#Demos: 
+Demos:                                                                                                                 
 To run the demos, change directory to the 'Software Package' folder, open 
 the scripts in MATLAB and run them or type the name of the scripts in a 
-command window. Due to the random nature of Monte 
+command window. The 'Expected Results' folder contains the output produced
+by the authors running the examples below. Due to the random nature of Monte 
 Carlo technique, the BaGoL results won't be identical to those in the 
 Expected_Results folder.                                                                                                            
 
