@@ -105,10 +105,11 @@ in the scripts documentation but they are also presented in the following. The u
 
 SMD:                                                                                                                   
 Structure containing input data with the following fields:                                                                       
-   X:    Vector of X localizations (nm),                                                                                           
-   Y:    Vector of Y localizations (nm),                                                                                        
-   X_SE: Vector of X precisions (nm),                                                                                                    
-   Y_SE: Vector of Y precisions (nm).                               
+   X:        Vector of X localizations (nm),                                                                                           
+   Y:        Vector of Y localizations (nm),                                                                                        
+   X_SE:     Vector of X precisions (nm),                                                                                                    
+   Y_SE:     Vector of Y precisions (nm),                                                                            
+   FrameNum: Vector of absolute frame numbers.                                                                      
 
 ROIsize:                                                                                                                    
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
@@ -122,7 +123,7 @@ Overlap is often picked to be 10-20 nm depending on the ROIsize and the size of 
 
 Cutoff:                                                                                                                    
 The localizations within each subregion are further divided into smaller set using hirerarchical algorithm as 
-a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. (nm)
+a pre-clustering algorithm. Cutoff is the size of the pre-clusters produced. Default is the ROIsize. (nm)
 If your data is not too dense we suggest use whatever value larger than your ROIsize. If your dataset is dense then you
 need to set it to a value smaller than your ROIsize so that the localizations within each ROI can be break further into
 smaller pieces. However, "Cutoff" must not be too small so that this pre-clustering step starts breaking up clusters.
