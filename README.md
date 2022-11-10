@@ -26,7 +26,7 @@ We concieve numerous biological applications of the algorithm, such as inspectio
 
 # Software Package Description:
 
-The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method described by: 
+The software package contains code and example scripts for the Baysian Grouping of Localizations (BaGoL) analysis method.
 
 Software Package:
 The algorithm codes and a pre-compliled mex execuatable needed for frame connection.   
@@ -36,17 +36,17 @@ REQUIREMENTS:
 Windows 64 bit OS
 MATLAB 64 bit
 MATLAB Statistics and Machine Learning Toolbox
-The algorithm was tested using MATLAB R2016a and will likely run on any later version. 
+The algorithm was tested using MATLAB R2018a and will likely run on any later version. 
 
 INSTALLATION:
 Download the Software Package.
 In MATLAB change directories to the BaGoL folder. 
 
-# Data:
+Data:
 dSTORM data of EGF receptors, DNA Origami and simulated 8-mer data. These data are used by the demos. 
 More data are available at the Nature Communication website published along the paper. 
 
-Demos: 
+#Demos: 
 To run the demos open the scripts in MATLAB and run them or type the name of the scripts in a command window.
 
 BaGoL_MPI_Origami.m:
@@ -103,13 +103,12 @@ MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
 in the scripts documentation but they are also presented in the following. The unit for all the lengths are in nm.
 
-Lambda:
-The algorithm can either learn this parameter from the data itself or take it as an input.
-The inpout lambda can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
-prior with mean value of Lambda for average number of localizations per emitter. Given a vector with two elements,
-BaGoL wil use a gamma prior for number of localizations per emitter. The product of the vector elements is equal 
-to the average of the number of localizations per emitter. These two parameters gives the user the flexibility of 
-adjusting the shape of the gamma distribution when the distribution shape is not well characterized.
+SMD:
+Structure containing input data with the following fields:
+   X:    Vector of X localizations
+   Y:    Vector of Y localizations
+   X_SE  Vector of X precisions
+   Y_SE: Vector of Y precisions
 
 ROIsize: 
 The given coordinates are split into subregions with the size assigned to ROIsize for speed porpuses. The size of 
@@ -148,6 +147,18 @@ Size of the produced posterior image, which is the same as the range of the inpu
 ChainFlag:
 1 saves the output chain. default is 0. It is recommended not to save the chain because it can take a very large chunk 
 of the memory.
+
+
+Xi:
+The algorithm can either learn this parameter from the data itself or take it as an input.
+The inpout lambda can be either a scalar or a vector with two elements. Given a scalar value, BaGoL will implement a Poisson 
+prior with mean value of Lambda for average number of localizations per emitter. Given a vector with two elements,
+BaGoL wil use a gamma prior for number of localizations per emitter. The product of the vector elements is equal 
+to the average of the number of localizations per emitter. These two parameters gives the user the flexibility of 
+adjusting the shape of the gamma distribution when the distribution shape is not well characterized.
+
+
+
 
 
 
