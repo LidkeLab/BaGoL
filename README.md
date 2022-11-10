@@ -180,8 +180,7 @@ Chain:
 
 Cell array containing the BaGoL chain for each pre-cluster
 
-XiChain: 
-
+XiChain:                                                                         
 Chain of Xi samples
 
 Note: The software package contain multiple functions to visualize and siplay the results including: 
