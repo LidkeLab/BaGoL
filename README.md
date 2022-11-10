@@ -48,7 +48,11 @@ dSTORM data of EGF receptors, DNA Origami and simulated 8-mer data. These data a
 More data are available at the Nature Communication website published along the paper. 
 
 #Demos: 
-To run the demos open the scripts in MATLAB and run them or type the name of the scripts in a command window.
+To run the demos, change directory to the 'Software Package' folder, open 
+the scripts in MATLAB and run them or type the name of the scripts in a 
+command window. Due to the random nature of Monte 
+Carlo technique, the BaGoL results won't be identical to those in the 
+Expected_Results folder.                                                                                                            
 
 BaGoL_MPI_Origami.m:
 Analysis of localizations from an experimental MPI DNA-Origami  
