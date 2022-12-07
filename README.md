@@ -81,17 +81,6 @@ LocsScatter-MAPN.fig:      Plot of time color-coded localizations and
                            MAPN-coordinates.
 MAPN.mat:                  Structure containing the MAPN-coordinates of emitters.
 
-BaGoL_EGFR_dSTORM.m:
-Analysis of localizations from a 4660x4660 nm^2 region of dSTORM EGFR data.  
-This example demonstrates use of hierarchial Bayes to infer number of localizations 
-per emitter distribution from part of the data and then use it to process the entire 
-data set. It takes ~15 mins in total to run this script. The results will 
-be saved in Results_EGFR folder. The outputs are similar to what was 
-described previously with the inclusion of
-
-MAPN_Hist+Random.png    Histogram of found NNDs compared to the curve for a
-                        random distribution.
-
 Eight_Mer.m: 
 Animation of the RJMCMC chian for a simulated 8mer data set. 
 It demonstrates the core BaGoL algorithm on a single cluster of localizations.
@@ -104,6 +93,19 @@ PreBaGoL_SRImage.png:   Traditional super-resolution image.
 Posterior_SRImage.png:  Super-resolution image from Posterior (weighted average
                         over all models).
 MAPN_SRImage.png:       Super-resolution image from MAPN (most likely model).
+
+BaGoL_EGFR_dSTORM.m:
+Analysis of localizations from a 4660x4660 nm^2 region of dSTORM EGFR data. (To avoid
+any confusion, we note that in the two previous examples data are saved in nm. However,
+in this example data is saved in the unit of pixel and we convert them into nm within 
+the script.) This example demonstrates use of hierarchial Bayes to infer number of localizations 
+per emitter distribution from part of the data and then use it to process the entire 
+data set. It takes ~15 mins in total to run this script. The results will 
+be saved in Results_EGFR folder. The outputs are similar to what was 
+described previously with the inclusion of
+
+MAPN_Hist+Random.png    Histogram of found NNDs compared to the curve for a
+                        random distribution.
 
 # Input Parameters and Parameter Adjustments:
 BaGoL has a few parameters that need to be carefully adjusted. A good description of the parameters are included
@@ -207,11 +209,6 @@ If you have questions, please feel free to shoot us an email:
 Mohamadreza Fazel: fazel.mohamadreza@gmail.com,                                                                                                                                                             
 Michael Wester: wester@math.unm.edu,                                                                                                  
 Keith Lidke: klidke@unm.edu.
-
-
-
-
-
 
 
 
