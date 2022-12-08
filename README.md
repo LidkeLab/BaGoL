@@ -13,7 +13,7 @@ those specific dyes or binding sites. BaGoL implements a Bayesian method of grou
 multiple blinking/binding events that can improve localization precision to better than one naometer. BaGoL allows 
 inclusion of prior knowledge such as distribution of the number of localizations per emitter and the localization precisions.
 
-The algorithm is comprised of several steps depicted in the figure. First, the list of localizations are split into smaller
+The algorithm is comprised of several steps depicted in the figure (png-file). First, the list of localizations are split into smaller
 subsets. Second, the outliers are recognized as localizations with less than a certain number of neighbors within a certain 
 distance. Third, localizations within each subset are further split into preclusters using hierarchical clustering 
 algorithm. Fourth, each precluster is processed using RJMCMC. Fifth, the chain from all the preclusters are combined to 
@@ -22,8 +22,9 @@ produce posterior and MAPN images. The figure "Data_Flow" describes these steps.
 We tested several other common algorithm for the porpuse of grouping and combining of the localizations and BaGoL did better
 than all of them. This method can be used for about a factor of two precision improvement on a typical dSTORM data set and
 facilitate further quantitative analysis. When using DNA-PAINT, the method can achieve better than one nanometer precision.
-We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. For
-detailed description of these functions please see their documentations.
+We concieve numerous biological applications of the algorithm, such as inspection of protein-protein interactions, etc. 
+While all the detailed description of the functions and parameters of BaGoL are provided within the software, here, we 
+provide a brief description of the method, parameters and implementation. 
 
 # Software Package Description:
 
