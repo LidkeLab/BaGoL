@@ -10,6 +10,7 @@ Thomas Schlichthaerle, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf 
 ***smite*** (Single Molecule Imaging Toolbox Extraordinaire) on GitHub
 (https://github.com/LidkeLab/smite) includes the most current version
 of BaGoL, modified to integrate in with other ***smite*** functionality.
+Future improvements to MATLAB BaGoL will be made there.
 
 # Algorithm Overview:
 
