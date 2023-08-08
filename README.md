@@ -5,6 +5,13 @@
 Mohamadreza Fazel, Michael J. Wester, David J. Schodt, Sebastian Restrepo Cruz, Sebastian Strauss, Florian Schueder, 
 Thomas Schlichthaerle, Jennifer M. Gillette, Diane S. Lidke, Bernd Rieger, Ralf Jungmann, Keith A. Lidke
 
+# NOTE on Code Availability:
+
+***smite*** (Single Molecule Imaging Toolbox Extraordinaire) on GitHub
+(https://github.com/LidkeLab/smite) includes the most current version
+of BaGoL, modified to integrate in with other ***smite*** functionality.
+Future improvements to MATLAB BaGoL will be made there.
+
 # Algorithm Overview:
 
 Single molecule localization microscopy super-resolution methods such as DNA-PAINT and (d)STORM generate multiple observed 
